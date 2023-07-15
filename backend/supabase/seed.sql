@@ -1,7 +1,5 @@
 -- noinspection SqlNoDataSourceInspectionForFile
-/ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
 /* 0. database-wide configuration */
-/ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
 /* allow our backend and CLI users to have a long statement timeout */
 alter role postgres
 set
@@ -618,7 +616,7 @@ create table if not exists
     primary key (contract_id, comment_id),
     visibility text,
     user_id text,
-    created_time timestamptz,
+    created_time timestamptz
   );
 
 alter table contract_comments enable row level security;
@@ -1059,7 +1057,7 @@ create table if not exists
     funds numeric not null,
     cost_per_view numeric not null,
     created_at timestamp not null default now(),
-    embedding vector (1536) not null,
+    embedding vector (1536) not null
   );
 
 alter table market_ads enable row level security;
@@ -1233,9 +1231,7 @@ add table user_notifications;
 
 commit;
 
-/ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
 /* 2. internal machinery for making firestore replication work */
-/ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
 /* records all incoming writes to any logged firestore document */
 create table if not exists
   incoming_writes (
