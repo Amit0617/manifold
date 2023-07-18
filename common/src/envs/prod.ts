@@ -63,17 +63,8 @@ export const PROD_CONFIG: EnvConfig = {
   cloudRunId: '47u4ztjqea',
   cloudRunRegion: 'uc',
 
-  adminIds: [
-    // 'igi2zGXsfxYPgB0DJTXVJVmwCOr2', // Austin
-    // '5LZ4LgYuySdL1huCWe7bti02ghx2', // James
-    // 'tlmGNz9kjXc2EteizMORes4qvWl2', // Stephen
-    // '0k1suGSJKVUnHbCPEhHNpgZPkUP2', // Sinclair
-    // 'IPTOzEqrpkWmEzh6hwvAyY9PqFb2', // Manifold
-    // 'AJwLWoo3xue32XIiAVrL5SyR1WB2', // Ian
-    // 'uglwf3YKOZNGjjEXKc5HampOFRE2', // D4vid
-    // 'GRwzCexe5PM6ThrSsodKZT9ziln2', //Inga
-    // '62TNqzdBx7X2q621HltsJm8UFht2', // Marshall
-  ],
+  adminEmails: [],
+
   visibility: 'PUBLIC',
 
   moneyMoniker: 'Ṁ',
