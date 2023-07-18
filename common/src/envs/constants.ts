@@ -54,7 +54,7 @@ export const CORS_ORIGIN_MANIFOLD = new RegExp(
 export const CORS_ORIGIN_VERCEL = new RegExp(
   '^https?://[a-zA-Z0-9\\-]+' +
     escapeRegExp(
-      'manifold-js9u(?:-(?:git-test-)?amit0617.vercel.app|.vercel.app)'
+      'manifold-js9u(?:-(?:git-test2?-amit0617.vercel.app|amit0617.vercel.app)|.vercel.app)'
     ) +
     '$'
 )
