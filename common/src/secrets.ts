@@ -8,19 +8,19 @@ import { zip } from 'lodash'
 // dev - https://console.cloud.google.com/security/secret-manager?project=dev-mantic-markets
 export const secrets = (
   [
-    'API_SECRET',
-    'DREAM_KEY',
-    'MAILGUN_KEY',
-    'OPENAI_API_KEY',
-    'STRIPE_APIKEY',
-    'STRIPE_WEBHOOKSECRET',
+    // 'API_SECRET',
+    // 'DREAM_KEY',
+    // 'MAILGUN_KEY',
+    // 'OPENAI_API_KEY',
+    // 'STRIPE_APIKEY',
+    // 'STRIPE_WEBHOOKSECRET',
     'SUPABASE_KEY',
     'SUPABASE_JWT_SECRET',
     'SUPABASE_PASSWORD',
-    'TEST_CREATE_USER_KEY',
-    'NEWS_API_KEY',
-    'REACT_APP_GIPHY_KEY',
-    'TWITTER_API_KEY_JSON',
+    // 'TEST_CREATE_USER_KEY',
+    // 'NEWS_API_KEY',
+    // 'REACT_APP_GIPHY_KEY',
+    // 'TWITTER_API_KEY_JSON',
     // Some typescript voodoo to keep the string literal types while being not readonly.
   ] as const
 ).concat()
@@ -91,11 +91,11 @@ export const getServiceAccountCredentials = (env: 'PROD' | 'DEV') => {
   }
 
   // Local environment variable for service credential.
-  const envVar = `GOOGLE_APPLICATION_CREDENTIALS_${env}`
+  const envVar = `GOOGLE_APPLICATION_CREDENTIALS_PROD`
   const keyPath = process.env[envVar]
   if (keyPath == null) {
     throw new Error(
-      `Please set the ${envVar} environment variable to contain the path to your ${env} environment key file.`
+      `Please set the ${envVar} environment variable to contain the path to your PROD environment key file.`
     )
   }
 

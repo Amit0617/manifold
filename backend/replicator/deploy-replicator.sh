@@ -36,5 +36,5 @@ yarn build && \
          --no-cpu-throttling
 
 # to establish subscription to service, e.g.:
-# gcloud pubsub subscriptions create supabaseReplicationSubscription --topic firestoreWrite --ack-deadline 600 --push-endpoint https://supabase-replicator-w3txbmd3ba-uc.a.run.app
+# gcloud pubsub subscriptions create supabaseReplicationPullSubscription --topic firestoreWrite --ack-deadline 600 --push-endpoint https://supabase-replicator-w3txbmd3ba-uc.a.run.app
 # and make sure subscription push service account is authed to call service

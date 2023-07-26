@@ -17,4 +17,18 @@ Two other things are used to tie this together:
 
 - A pub/sub pull subscription that the service can get writes from. You can see this in the GCP console, e.g. https://console.cloud.google.com/cloudpubsub/subscription/detail/supabaseReplicationPullSubscription?project=mantic-markets
 
+Above stuff can be created by
+
+```
+gcloud pubsub subscriptions create supabaseReplicationPullSubscription --topic firestoreWrite --ack-deadline 600 --push-endpoint https://supabase-replicator-47u4ztjqea-uk.a.run.app
+```
+
 - A scheduled job that POSTs to the `replay-failed` endpoint sometimes (currently once per minute), e.g. https://console.cloud.google.com/cloudscheduler/jobs/edit/us-east4/replayFailedFirestoreWrites?project=mantic-markets
+
+#### Docs for setting up replayFailedFirestoreWrites scheduler
+
+https://cloud.google.com/run/docs/triggering/using-scheduler#console
+
+#### See logs of supabase-replicator here
+
+https://console.cloud.google.com/run/detail/us-east4/supabase-replicator/logs?project=mantic-market
